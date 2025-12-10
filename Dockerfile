@@ -2,9 +2,9 @@
 FROM node:19-alpine AS build
 WORKDIR /app
 COPY package.json .
-RUN sh npm install
+RUN npm install
 COPY . .
-RUN sh npm run build
+RUN npm run build
 # stage 2 – transfer to nginx image
 FROM nginx:1.23-alpine
 COPY --from=build /app/build /usr/share/nginx/html
