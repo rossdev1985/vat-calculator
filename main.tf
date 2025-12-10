@@ -59,4 +59,7 @@ resource "google_compute_firewall" "default" {
     ports = ["22", "80"]
     protocol = "tcp"
   }
+  allow {
+    protocol = "icmp"
+  }
 }
