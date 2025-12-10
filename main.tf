@@ -51,15 +51,11 @@ resource "google_compute_firewall" "default" {
   source_ranges = ["0.0.0.0/0"]
 
   allow {
-    ports = ["22", "80"]
     protocol = "icmp"
   }
 
   allow {
     ports = ["22", "80"]
     protocol = "tcp"
-  }
-  allow {
-    protocol = "icmp"
   }
 }
